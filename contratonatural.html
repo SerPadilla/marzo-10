@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edege">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Contrato Natural</title>
+    <style>
+        #capturaTexto {
+            display: inline;
+            border-bottom: 1px dashed #000;
+            cursor: pointer;
+        }
+        h2 {
+            color: blue;
+            font-size: 20px;
+            font-family: 'Helvetica', sans-serif;
+        }
+                
+    .oculto {
+      display: none;
+    }  
+    
+    #check {
+      width: 15px;
+      height: 15px;
+     
+    }
+    
+    .divisor {
+      width: 100%;
+      height: 2px;
+      background-color: #5c5858;
+      margin: 20px auto;
+    }
+   
+
+    </style>
+<form>
+    <header>
+
+        <div class="menu container">
+            <h1><a href="index.html">Inicio</a></h1> </div>
+
+        <div class="header-content container">
+            <div class="content">
+
+                <h2>
+                    Saludo
+                </h2>
+
+                <p>
+                    Señor(a) <span class="parrafoGuardado" id="parrafo1"> </span> le indico que la llamada está siendo
+                    grabada por motivos de calidad y seguimiento.
+                    A continuación, validaremos en sistemas el correcto funcionamiento de sus servicios de
+                    telecomunicaciones
+                    que actualmente tiene con nosotros.
+                </p>
+
+            </div>
+            
+<body>
+
+    <button id="botonMostrar" onclick="mostrarContenido(event)">Titularidad</button>
+    <div id="contenido" class="oculto">
+
+        ¿Conoce usted al titular del servicio?</p>
+        <p>
+        <h4>Si conoce el titular:</h4>
+        </p>
+        <p>¿Cuál es la relación tiene con el Titular? (hijo, hermano, abuelo, etc.)</p>
+        <p>¿Puede ubicarlo para que él realice la aceptación del trámite en este momento?</p>
+        <p> ¿puede darnos un número de contacto para comunicarnos con el titular? ( Ya que el quien puede
+            realizar la aceptación del trámite o ceder el contrato. )</p>
+
+        <h4>No conoce el titular:</h4>
+
+        <p> ¿Usted es quien hace uso y paga el servicio de ETB?</p>
+        <p>¿Me confirma la dirección y teléfono del servicio?</p>
+        <p></p>¿Acepta el cambio de titularidad?</p>
+        <p>( si acepta el cambio de titularidad proceda al cambio de suscriptor )</p>
+
+    </div>
+
+    <script>
+        function mostrarContenido(event) {
+          event.preventDefault(); 
+          var contenido = document.getElementById('contenido');
+          contenido.classList.toggle('oculto');
+        }
+      </script>
+
+    <div class="header-content container">
+        <div class="content">
+
+            <h2>
+                Habeas Data
+            </h2>
+
+            <p>
+                Señor(a) <span class="parrafoGuardado" id="parrafo1"> </span> de acuerdo a la ley de protección de datos
+                personales 1581 de 2012 ¿Autoriza a ETB a
+                recolectar sus datos personales con fines comerciales y contractuales?
+                De acuerdo con lo anterior, si su respuesta es afirmativa,responda"SI". SI= continuar con la
+                migración
+
+            </p>
+            </h4>
+        </div>
+        <div class="header-content container">
+            <div class="content">
+
+                <h2>
+                    Canales de Atención
+                </h2>
+
+                <p>
+                    Señor(a) <span class="parrafoGuardado" id="parrafo1"> </span> tienes derecho a elegir los canales por
+                    los cuales deseas que ETB se comunique
+                    para fines comerciales, publicitarios y gestión de cartera de acuerdo con la Ley 2300 de
+                    2023. Elige canal de contacto [uno o varios]:
+                    Llamadas, WhatsApp, Correo electrónico y SMS.
+                    Gracias, Señor <span class="parrafoGuardado" id="parrafo1"> </span> registramos el medio de contacto
+                    en nuestros sistemas
+                </p>
+
+            </div>
+            <div class="header-content container">
+                <div class="content">
+
+                    <h2>
+
+                    </h2>
+                </div>
+                <div class="header-content container">
+                    <div class="content">
+                        <h2>
+                            Autorización Centrales De Riesgo
+                        </h2>
+
+
+                        <p>
+                            ¿Autoriza usted a ETB, para que, consulte, actualice o reporte su comportamiento
+                            crediticio a centrales de riesgo?
+                            De acuerdo con lo anterior, si su respuesta es afirmativa,responda"SI". SI=
+                            continuar con la migración.
+                        </p>
+                        <div class="divisor"></div>
+
+                        <div class="header-content container">
+                            <div class="content">
+                                <h2>
+                                    Validación Cliente
+                                </h2>
+                            </div>
+                            <label for="cuadroTexto10">Su nombre completo con apellidos es :</label>
+                            <input id="campoTexto" type="text" style="width: 300px">
+
+
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    var campoTexto = document.getElementById('campoTexto');
+                                    var parrafosGuardados = document.querySelectorAll('.parrafoGuardado');
+
+                                    campoTexto.addEventListener('input', function (event) {
+                                        var textoCapturado = campoTexto.value;
+
+                                       
+                                        parrafosGuardados.forEach(function (parrafo) {
+                                            parrafo.textContent = ' ' + parrafo.id.charAt(parrafo.id.length) + ' ' + textoCapturado;
+                                        });
+                                    });
+                                });
+                            </script>
+                            <p>
+
+                            </p>
+                        </div>
+
+                        <label for="cuadroTexto11">Su tipo de documento de indentidad es:</label>
+                        <input type="text" id="cuadroTexto11" style="width: 200px">
+                        <p></p>
+                        <label for="cuadroTexto12">Su fecha de expedición del documento es :</label>
+                        <input type="text" id="cuadroTexto12" style="width: 200px">
+
+                        <p></p>
+                        <label for="cuadroTexto13">Su dirección completa de instalación del predio es :</label>
+                        <input type="text" id="cuadroTexto13" style="width: 300px">
+                        <p></p>
+                        <label for="cuadroTexto17">Tipo de edificación :</label>
+                        <input type="text" id="cuadroTexto17" style="width: 200px">
+                        <p></p>
+                        <label for="cuadroTexto14">Barrio :</label>
+                        <input type="text" id="cuadroTexto14" style="width: 300px">
+                        <p></p>
+                        <label for="cuadroTexto15">Estrato:</label>
+                        <input type="text" id="cuadroTexto15" style="width: 100px">
+                        <p></p>
+
+
+                        <body>
+                            <label for="inputPalabra">Correo electrónico:</label>
+                            <input type="text" id="inputPalabra" oninput="reemplazarLetras()" style="height: 15px; width:300px;">
+                       
+                            
+                            <div>
+                                <span id="resultadoInicio" class="palabra-reemplazada"></span>
+                            </div>
+                        
+                                                   
+                            <script>
+                                var palabrasReemplazo = {
+                                    'a': ' avión', 'b': ' barco', 'c': ' carro', 'd': ' dedo', 'e': ' elefante', 'f': ' foca', 'g': ' gato', 'h': ' hilo', 'i': ' iglesia', 'j': ' jabón', 'k': ' kilo', 'l': ' limón', 'm': ' mamá', 'n': ' nube', 'o': ' oso', 'p': ' perro', 'q': ' queso', 'r': ' ratón', 's': ' sol', 't': ' tigre', 'u': ' uva', 'v': ' vela', 'w': ' whisky', 'x': ' xilófono', 'y': ' yogur', 'z': ' zapato',
+                                };
+                        
+                                function reemplazarLetras() {
+                                    var correoOriginal = document.getElementById('inputPalabra').value;
+                                    var correoOriginalElement = document.getElementById('correoOriginal');
+                                    correoOriginalElement.textContent = correoOriginal;
+                        
+                                    var resultadoInicio = document.getElementById('resultadoInicio');
+                                    var resultadoFinal = document.getElementById('resultadoFinal');
+                        
+                                    resultadoInicio.innerHTML = '';
+                                    resultadoFinal.innerHTML = '';
+                        
+                                    var nuevaPalabraInicio = 'Correo electrónico deletreado es ' ;
+                                    var nuevaPalabraFinal = ' ';
+                        
+                                    for (var i = 0; i < correoOriginal.length; i++) {
+                                        var letraActual = correoOriginal[i].toLowerCase();
+                                        var palabraReemplazo = palabrasReemplazo[letraActual] || letraActual;
+                        
+                                        nuevaPalabraInicio += palabraReemplazo;
+                                        nuevaPalabraFinal += palabraReemplazo;
+                        
+                                        var spanInicio = document.createElement('span');
+                                        spanInicio.textContent = palabraReemplazo;
+                                        resultadoInicio.appendChild(spanInicio);
+                        
+                                        var spanFinal = document.createElement('span');
+                                        spanFinal.textContent = palabraReemplazo;
+                                        resultadoFinal.appendChild(spanFinal);
+                                    }                        
+                                  
+                                    resultadoInicio.textContent = nuevaPalabraInicio;
+                                    resultadoFinal.textContent = nuevaPalabraFinal;
+                                }
+                            </script>
+                        </body>        
+                       
+                    </script>
+                            <p></p>
+                            <label for="cuadroTexto18">Telefonos de contacto:</label>
+                            <input type="text" id="cuadroTexto18" style="width: 300px">
+                            <p></p>
+                    </script>
+                            
+                    </div>
+
+
+                    <div>
+                        <h2>
+                            Validación Oferta
+                        </h2>
+                    </div>
+
+                    <label for="cuadroTexto7">La oferta adquirida es :</label>
+                    <input type="text" id="campoTexto7" style="width: 300px" oninput="capturarNumeros()">
+                    <p></p>
+                    <label for="cuadroTexto8">Segmento :</label>
+                    <input type="text" id="campoTexto8" style="width: 300px">
+                    <p></p>
+                    <label for="cuadroTexto9">Promoción :</label>
+                    <input type="text" id="campoTexto9" style="width: 300px">
+                    <p></p>
+                    <label for="cuadroTexto6">Valor de la factura es :</label>
+                    <input type="text" id="campoTexto6" style="width: 300px">
+                    <p></p>
+                    <label for="cuadroTexto4">Agenda y franja :</label>
+                    <input type="text" id="campoTexto4" style="width: 300px">
+                    <div><p></p>
+                    <label for="cuadroTexto17">SVA adquirido :</label>
+                    <input type="text" id="campoTexto17" style="width: 200px" >
+                    (<s>Solo si aplica</s>)
+                    <div>
+
+                
+                        <h2>Adicional </h2>
+                    </div>
+                    <p></p>
+                    <label for="cuadroTexto">CUN:</label>
+                    <input id="campoTexto" type="text" style="width: 200px">
+                    <p></p>
+                    <label for="cuadroTexto">Linea a migrar:</label>
+                    <input id="campoTexto" type="text" style="width: 200px">
+                    <p></p>
+                    <div class="divisor"></div>
+                    <div>
+                        <h2> Validación Oferta</h>
+                    </div>
+
+                    <p>La oferta adquirida es : <span class="parrafoGuardado7" id="parrafo7"> </span></p>
+                    <p>Segmento : <span class="parrafoGuardado8" id="parrafo8"> </span></p>
+                    <p>Promoción : <span class="parrafoGuardado9" id="parrafo9"> </span></p>
+                    <p>Valor de la factura : <span class="parrafoGuardado6" id="parrafo6"> </span></p>
+                    <p>Agenda y Franja: <span class="parrafoGuardado4" id="parrafo4"> </span></p>
+                    <p>SVA adquirido: <span class="parrafoGuardado17" id="parrafo17"> </span></p>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var campoTexto17 = document.getElementById('campoTexto17');
+                            var parrafosGuardados17 = document.querySelectorAll('.parrafoGuardado17');
+
+                            campoTexto17.addEventListener('input', function (event) {
+                                var textoCapturado17 = campoTexto17.value;
+                                parrafosGuardados17.forEach(function (parrafo) {
+                                    parrafo.textContent = ' ' + parrafo.id.charAt(parrafo.id.length) + ' ' + textoCapturado17;
+                                });
+                            });
+                        });
+                        function capturarNumeros() {
+      
+                        var text = document.getElementById("campoTexto7").value;
+                        var numeros = text.replace(/[^0-9]/g, '');
+                        document.getElementById("numerosCapturados").textContent = numeros;
+                      }
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var campoTexto4 = document.getElementById('campoTexto4');
+                            var parrafosGuardados4 = document.querySelectorAll('.parrafoGuardado4');
+
+                            campoTexto4.addEventListener('input', function (event) {
+                                var textoCapturado4 = campoTexto4.value;
+
+                                // Actualiza el contenido en todos los párrafos guardados
+                                parrafosGuardados4.forEach(function (parrafo) {
+                                    parrafo.textContent = ' ' + parrafo.id.charAt(parrafo.id.length) + ' ' + textoCapturado4;
+                                });
+                            });
+                        });
+
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var campoTexto6 = document.getElementById('campoTexto6');
+                            var parrafosGuardados6 = document.querySelectorAll('.parrafoGuardado6');
+
+                            campoTexto6.addEventListener('input', function (event) {
+                                var textoCapturado6 = campoTexto6.value;
+
+                                // Actualiza el contenido en todos los párrafos guardados
+                                parrafosGuardados6.forEach(function (parrafo) {
+                                    parrafo.textContent = ' ' + parrafo.id.charAt(parrafo.id.length) + ' ' + textoCapturado6;
+                                });
+                            });
+                        });
+
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var campoTexto7 = document.getElementById('campoTexto7');
+                            var parrafosGuardados7 = document.querySelectorAll('.parrafoGuardado7');
+
+                            campoTexto7.addEventListener('input', function (event) {
+                                var textoCapturado7 = campoTexto7.value;
+
+                                // Actualiza el contenido en todos los párrafos guardados
+                                parrafosGuardados7.forEach(function (parrafo) {
+                                    parrafo.textContent = ' ' + parrafo.id.charAt(parrafo.id.length) + ' ' + textoCapturado7;
+                                });
+                            });
+                        });
+
+
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var campoTexto8 = document.getElementById('campoTexto8');
+                            var parrafosGuardados8 = document.querySelectorAll('.parrafoGuardado8');
+
+                            campoTexto8.addEventListener('input', function (event) {
+                                var textoCapturado8 = campoTexto8.value;
+
+                                // Actualiza el contenido en todos los párrafos guardados
+                                parrafosGuardados8.forEach(function (parrafo) {
+                                    parrafo.textContent = ' ' + parrafo.id.charAt(parrafo.id.length) + ' ' + textoCapturado8;
+                                });
+                            });
+                        });
+
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var campoTexto9 = document.getElementById('campoTexto9');
+                            var parrafosGuardados9 = document.querySelectorAll('.parrafoGuardado9');
+
+                            campoTexto9.addEventListener('input', function (event) {
+                                var textoCapturado9 = campoTexto9.value;
+
+                                // Actualiza el contenido en todos los párrafos guardados
+                                parrafosGuardados9.forEach(function (parrafo) {
+                                    parrafo.textContent = ' ' + parrafo.id.charAt(parrafo.id.length) + ' ' + textoCapturado9;
+                                });
+                            });
+                        });
+                    </script>
+                    <div>
+                        <h2>
+                            Informarle Al Cliente
+                        </h2>
+                        <p>
+                            Señor(a) <span class="parrafoGuardado" id="parrafo1"> </span> el numero telefonico de su
+                            servicio se mantiene.
+                        </p>
+                        Su facturación sera mensualizada.
+                    </div>
+                    <h2>
+                        Cierre
+                    </h2>
+                    <p>
+                        Perfecto señor(a) <span class="parrafoGuardado" id="parrafo1"> </span>  a continuación
+                        realizaremos el proceso de validación como contrato verbal del servicio que está adquiriendo con
+                        ETB. Recuerde que esta grabación será su contrato de voz y le enviaremos el contrato digital a
+                        su correo electrónico..
+                    </p>
+                    <div class="divisor"></div>
+
+                    <h2>Huella de voz</h2>
+                    <p> Señor(a) <span class="parrafoGuardado" id="parrafo1"> </span> a partir de este momento vamos a
+                        validar el servicio que está contratando con ETB. Esta llamada
+                        será grabada para el contrato verbal. Generaremos el proceso de validación y aprobación de la
+                        información suministrada, por favor responda "SI", a las siguientes preguntas</p>
+                    <p>Le confirmo sus datos son los siguientes:</p>
+                    <p><s> Solo cambio de titularidad</s></p>
+                    <p><s>Antes de realizar la validadación de datos me confirma si ¿desea continuar con el cambio de titularidad? </s>.</p>
+                    <h2>Validación de datos</h2>
+                    <p>Su nombre completo es: <span class="parrafoGuardado" id="parrafo1"> </span> <input type="checkbox" id="check"></p>
+
+                    <div id="resultado11">Su tipo y número de documento de identidad es CC/CE/NIT : <input type="checkbox" id="check"></div>
+                    <script>
+                        var cuadroTexto11 = document.getElementById('cuadroTexto11');
+                        var resultado11 = document.getElementById('resultado11');
+
+                        cuadroTexto11.addEventListener('input', function () {
+                            var complemento = this.value.trim();
+
+                            if (complemento !== '') {
+                                resultado11.textContent = 'Su tipo y número de documento de identidad es CC/CE/NIT: ' + complemento;
+                            } else {
+                                Resultado11.textContent = 'La información complementaria es:';
+                            }
+                        });    
+                    </script>
+                    <P></P>
+                    <div id="resultado12">Su fecha de expedición del documento es: <input type="checkbox" id="check"></div>
+
+                    <script>
+                        var cuadroTexto12 = document.getElementById('cuadroTexto12');
+                        var resultado12 = document.getElementById('resultado12');
+
+                        cuadroTexto12.addEventListener('input', function () {
+                            var complemento = this.value.trim();
+
+                            if (complemento !== '') {
+                                resultado12.textContent = 'Su fecha de expedición del documento es: ' + complemento;
+                            } else {
+                                Resultado12.textContent = 'ERROR:';
+                            }
+                        });
+
+                    </script>
+                    <P></P>
+                    <div id="resultado13">Su dirección completa de instalación del predio es : <input type="checkbox" id="check"></div>
+                    <script>
+                        var cuadroTexto13 = document.getElementById('cuadroTexto13');
+                        var resultado13 = document.getElementById('resultado13');
+
+                        cuadroTexto13.addEventListener('input', function () {
+                            var complemento = this.value.trim();
+
+                            if (complemento !== '') {
+                                resultado13.textContent = 'Su dirección completa de instalación del predio es :' + complemento;
+                            } else {
+                                Resultado13.textContent = 'ERROR';
+                            }
+                        });
+                    </script>
+                    <p></p>
+                    <div id="resultado17">Su tipo de edificación es : <input type="checkbox" id="check"></div>
+                    <script>
+                        var cuadroTexto17 = document.getElementById('cuadroTexto17');
+                        var resultado17 = document.getElementById('resultado17');
+
+                        cuadroTexto17.addEventListener('input', function () {
+                            var complemento = this.value.trim();
+
+                            if (complemento !== '') {
+                                resultado17.textContent = 'Su tipo de edificación es : ' + complemento;
+                            } else {
+                                Resultado17.textContent = 'ERROR:';
+                            }
+                        });
+
+                    </script>
+                    <P></P>
+                    <div id="resultado14">Su servicio se encuentra ubicado en el barrio:  <input type="checkbox" id="check"></div>
+                    <script>
+                        var cuadroTexto14 = document.getElementById('cuadroTexto14');
+                        var resultado14 = document.getElementById('resultado14');
+
+                        cuadroTexto14.addEventListener('input', function () {
+                            var complemento = this.value.trim();
+
+                            if (complemento !== '') {
+                                resultado14.textContent = 'Su servicio se encuentra ubicado en el barrio : ' + complemento;
+                            } else {
+                                Resultado14.textContent = 'ERROR:';
+                            }
+                        });
+                    </script>
+                    <P></P>
+                    <div id="resultado15">Su estrato es : <input type="checkbox" id="check"></div>
+                    <script>
+                        var cuadroTexto15 = document.getElementById('cuadroTexto15');
+                        var resultado15 = document.getElementById('resultado15');
+
+                        cuadroTexto15.addEventListener('input', function () {
+                            var complemento = this.value.trim();
+
+                            if (complemento !== '') {
+                                resultado15.textContent = 'Su estrato es : ' + complemento;
+                            } else {
+                                Resultado15.textContent = 'ERROR:';
+                            }
+                        });
+
+                    </script>
+                    <p></p>
+                    <p>Señor(a) <span class="parrafoGuardado" id="parrafo1"></span> le confirmo su correo electronico es : <span id="correoOriginal" class="palabra-original"></span>, le
+                        voy a deletrear su correo para dejar registro en la llamada : <span id="resultadoFinal" class="palabra-reemplazada"></span> : en el correo usted recibirá
+                        información de su factura, fecha límite de pago y puntos de recaudo de manera rápida y práctica. <input type="checkbox" id="check">
+                    </p>
+
+
+                    <div id="resultado18">Sus telefonos de contacto son : <input type="checkbox" id="check"></div>
+                    <script>
+                        var cuadroTexto18 = document.getElementById('cuadroTexto18');
+                        var resultado18 = document.getElementById('resultado18');
+
+                        cuadroTexto18.addEventListener('input', function () {
+                            var complemento = this.value.trim();
+
+                            if (complemento !== '') {
+                                resultado18.textContent = 'Sus telefonos de contacto son : ' + complemento;
+                            } else {
+                                Resultado18.textContent = 'ERROR:';
+                            }
+                        });
+
+                    </script>
+                    <h4><b>¿ESTA DE ACUERDO?</b></h4>
+
+                    <h2>Canales De Atención</h2>
+                    <P></P>
+                    <P>Teniendo en cuenta que usted autorizó los canales por los cuales desea que ETB se comunique para
+                        fines comerciales, publicitarios y gestión de cartera, le informamos que en caso de que lo
+                        requiera puede actualizar esta información a través de la página https://etb.com/ley2300/ </P>
+
+                    <h2>Validación Oferta</h2>
+                    <p> la oferta adquirida es : <span class="parrafoGuardado7" id="parrafo7"> </span> </p>
+                    <p> Segmento : <span class="parrafoGuardado8" id="parrafo8"></span></p>
+                    <p> Tecnologia : Fibra Optica En FTTH</p>
+                    <p>Su velocidad del internet es : <span id="numerosCapturados"></span> <b> MEGAS</b> (<s>No aplica Single de Voz</s>)</p>
+                    <p> Linea ilimitada local (<s>No aplica Single de interner</s>)</p>
+                    <p> Valor total de la factura será de : $ <span class="parrafoGuardado6" id="parrafo6"></span> <b>IVA INCLUIDO, TARIFA SUJETA A INCREMENTOS TARIFARIOS</b> </p>
+                    <P> Esta oferta cuenta con la promoción : <span class="parrafoGuardado9" id="parrafo9"></span></p>
+                    <p>La facturación de este servicio sera mensualida </p>
+                    <p> Punto Cableado Opcional (<s>No aplica Single de Voz</s>) </p>
+                    <p></p>
+                    <p></p>
+                    <p>Parrilla Plus, 116 canales, 73 HD , 33 SD + 10 Emisoras (indicar Numero de Decos) Grabar y
+                        Retroceder por 12 Meses <b>(SOLO APLICA EN TRIOS)</b></p>
+                    <P></P>
+                    <h4><b>¿ESTA DE ACUERDO?</b></h4>
+                    <P></P>
+                    <p>
+                    <h2>
+                        SVA
+                    </h2>
+                    </p>
+                    <P>• Los siguientes servicios que usted desea adquirir de manera adicional no hacen parte de la
+                        promoción. </P>
+                    <p>• SVA adquirido: <span class="parrafoGuardado17" id="parrafo17"> </span></p>
+                    </p></P>
+                    <h4><b>¿ESTA DE ACUERDO?</b></h4>
+                    <P></P>
+                    <h2>cláusula De Permanencia</h2>
+                    <P> Señor(a) <span class="parrafoGuardado" id="parrafo1"> </span> , el nuevo servicio contratado no le
+                        genera nueva cláusula de permanencia.</P>
+                    <P></P>
+                    <H2>Comodato</H2>
+                    <P>Señor(a) <span class="parrafoGuardado" id="parrafo1"> </span> ,Los equipos que se entregan en la
+                        instalación son en comodato, en caso de daño o pérdida usted se hace responsable por el valor
+                        comercial publicado en la página web de ETB.
+                        ¿Acepta usted recibir los equipos que se entregan en la instalación en comodato? De acuerdo con
+                        lo anterior, si su respuesta es afirmativa, responda "SI". (La respuesta del cliente debe ser SÍ
+                        para avanzar)
+                    </P>
+                    <h2>Despedida</h2>
+                    <P>Gracias por ser parte de ETB, recuerde que hablo con (Nombre y apellido) de ETB, para cualquier
+                        inquietud puede llamarnos a nuestra línea de atención 6013777777 o 018000112170. ¡Hasta pronto!
+                    </P>
+                    <p></p>
+                    <div class="divisor"></div>
+                    <h2>Oferta Comercial</h2>
+                    <p></p>
+                    <P>"Señor(a) <span class="parrafoGuardado" id="parrafo1"> </span> al realizar el cambio de
+                        tecnología en este momento usted aplica un beneficio adicional llamado ETB total donde puede
+                        tener hasta 5 línea con nuestros planes preferenciales o tener el beneficio de familia y amigos"
+                    </P>
+                    <p>
+                        RTA si esta de acuerdo lo voy a dejar con el asesor preferencial para que le brinden los beneficios.
+                    </P>
+                    <h2>Manejo de Objeción</h2>
+                    <p> Puede contar con planes desde 17.000 o plan ilimitado con mas beneficios.</p>
+                    <p>RTA si esta deacuerdo lo dejaré con el asesor preferencial para que le brinden la información </p>
+                    
+
+
+                    
+
+                    
+                    <div style="margin-bottom: 200px ;">
+                        
+                      </div>
+            
+                     
+                    </header>
+
+
+
+
+
+</body>
+</head>
+
+</html>
